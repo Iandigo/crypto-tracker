@@ -1,11 +1,11 @@
 .title {
-    flex: 1;
-    color: gold;
-    font-weight: bold;
-    cursor: pointer;
+  flex: 1;
+  color: gold;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .items {
-    text-emphasis-color: white;
-    background-color: white;
+  text-emphasis-color: white;
+  background-color: white;
 }
