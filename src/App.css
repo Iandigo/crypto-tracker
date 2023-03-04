@@ -10,10 +10,6 @@
   overflow-y: auto;
 }
 
-.App {
-  width: 100%;
-}
-
 .coin-app {
   display: flex;
   flex-direction: column;

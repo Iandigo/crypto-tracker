@@ -14,14 +14,20 @@ import { CryptoState } from "../CrytoContext";
 const Header = () => {
   const { currency, setCurrency } = CryptoState();
 
+  const handleChange = (event) => {
+    setCurrency(event.target.value);
+  };
+
   return (
-    <AppBar color="transparent" position="sticky">
+    <AppBar color="transparent" position="static">
       <Container>
         <Toolbar>
           <Typography className={classes.title} variant="h6">
             Cryto Tracker
           </Typography>
           <Select
+            labelId="label-cur"
+            id="currency"
             variant="filled"
             style={{
               color: "white",
@@ -31,8 +37,16 @@ const Header = () => {
               paddingBottom: 15,
               overflow: "hidden",
             }}
+            label="Currency"
             value={currency}
-            onChange={(e) => setCurrency(e.target.value)}
+            onChange={handleChange}
+            MenuProps={{
+              PaperProps: {
+                style: {
+                  backgroundColor: "transparent",
+                },
+              },
+            }}
           >
             <MenuItem className={classes.items} value={"USD"}>
               USD
