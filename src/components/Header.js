@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  AppBar,
-  Container,
-  Toolbar,
-  Typography,
-  MenuItem,
-  Select,
-} from "@mui/material";
+import { AppBar, Container, Toolbar, Typography, Button } from "@mui/material";
 
 import classes from "./Header.module.css";
 import { CryptoState } from "../CrytoContext";
@@ -25,36 +18,24 @@ const Header = () => {
           <Typography className={classes.title} variant="h6">
             Cryto Tracker
           </Typography>
-          <Select
-            labelId="label-cur"
-            id="currency"
-            variant="filled"
-            style={{
-              color: "white",
-              width: 100,
-              height: 40,
-              marginRight: 15,
-              paddingBottom: 15,
-              overflow: "hidden",
-            }}
-            label="Currency"
-            value={currency}
-            onChange={handleChange}
-            MenuProps={{
-              PaperProps: {
-                style: {
-                  backgroundColor: "transparent",
-                },
-              },
-            }}
+          <Button
+            className={classes.button}
+            variant="contained"
+            onClick={handleChange}
+            style={{ color: "white", marginRight: 20 }}
+            value="AUD"
           >
-            <MenuItem className={classes.items} value={"USD"}>
-              USD
-            </MenuItem>
-            <MenuItem className={classes.items} value={"AUD"}>
-              AUD
-            </MenuItem>
-          </Select>
+            AUD
+          </Button>
+          <Button
+            className={classes.button}
+            variant="contained"
+            onClick={handleChange}
+            style={{ color: "white" }}
+            value="USD"
+          >
+            USD
+          </Button>
         </Toolbar>
       </Container>
     </AppBar>
